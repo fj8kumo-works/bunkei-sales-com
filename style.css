@@ -1,0 +1,383 @@
+@charset "UTF-8";
+
+/* ------------------------------------------------------------------
+   文系営業.com
+   記録としての読みやすさだけを目的にした設計。
+   装飾は朱の罫と日付のぶら下げのみ。
+------------------------------------------------------------------ */
+
+:root {
+  --paper:     #FAFAF7;
+  --ink:       #1C2B33;
+  --ink-soft:  #5D6E77;
+  --rule:      #E0E2DD;
+  --seal:      #B4372C;
+
+  --mincho: "Hiragino Mincho ProN", "HiraMinProN-W3", "Yu Mincho", "YuMincho",
+            "MS PMincho", serif;
+  --gothic: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic",
+            "YuGothic", "Meiryo", sans-serif;
+
+  --measure: 34rem;   /* 本文の行長 = 全角約36字 */
+  --gutter:  1.5rem;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mincho);
+  line-height: 1.9;
+  font-feature-settings: "palt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 朱の細線。報告書の天罫のつもり。 */
+body::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: var(--seal);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+a:hover { color: var(--seal); }
+
+a:focus-visible {
+  outline: 2px solid var(--seal);
+  outline-offset: 3px;
+}
+
+/* ---------- 枠組み ---------- */
+
+.shell {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 var(--gutter) 5rem;
+}
+
+.masthead {
+  padding: 1.75rem 0 0;
+}
+
+.masthead__name {
+  margin: 0;
+  font-family: var(--gothic);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+
+.masthead__name a { text-decoration: none; }
+.masthead__name a:hover { text-decoration: underline; }
+
+.colophon {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--gothic);
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.colophon p { margin: 0 0 0.35rem; }
+
+/* ---------- 一覧ページ ---------- */
+
+.intro {
+  padding: 3.5rem 0 3rem;
+  max-width: var(--measure);
+}
+
+.intro__lead {
+  margin: 0;
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+.intro__note {
+  margin: 1.25rem 0 0;
+  font-family: var(--gothic);
+  font-size: 0.875rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+.records {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.record {
+  border-bottom: 1px solid var(--rule);
+  padding: 2rem 0;
+}
+
+/* 一覧の最後はフッターの罫と重なるので消す */
+.record:last-child {
+  border-bottom: 0;
+}
+
+.record__date {
+  display: block;
+  font-family: var(--gothic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  color: var(--seal);
+}
+
+.record__title {
+  margin: 0.5rem 0 0;
+  font-size: 1.4375rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.record__title a { text-decoration: none; }
+.record__title a:hover { text-decoration: underline; }
+
+.record__summary {
+  margin: 0.65rem 0 0;
+  max-width: var(--measure);
+  font-family: var(--gothic);
+  font-size: 0.875rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+/* 画面が広いときだけ、日付を本文の左の欄外に出す */
+@media (min-width: 46rem) {
+  .record {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    column-gap: 1.5rem;
+  }
+  .record__date { padding-top: 0.55rem; }
+  .record__title { margin-top: 0; }
+}
+
+/* ---------- 記事ページ ---------- */
+
+.article { max-width: var(--measure); }
+
+.article__head {
+  padding: 3.5rem 0 2.5rem;
+}
+
+.article__date {
+  display: block;
+  font-family: var(--gothic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--seal);
+}
+
+.article__title {
+  margin: 0.75rem 0 0;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.article__lead {
+  margin: 1.5rem 0 0;
+  font-family: var(--gothic);
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+.article__body > h2 {
+  margin: 3.25rem 0 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.article__body > h2 .brand {
+  display: block;
+  font-family: var(--gothic);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.article__body > p {
+  margin: 0 0 1.75rem;
+}
+
+.article__body strong { font-weight: 600; }
+
+/* 結論のまとめ */
+.summary-box {
+  margin: 0 0 2.5rem;
+  padding: 1.375rem 0 1.375rem 1.25rem;
+  border-left: 3px solid var(--seal);
+}
+
+.summary-box h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.summary-box ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-family: var(--gothic);
+  font-size: 0.875rem;
+  line-height: 1.85;
+}
+
+.summary-box li { margin-bottom: 0.65rem; }
+.summary-box li:last-child { margin-bottom: 0; }
+
+/* 数字ひとつを立てる */
+.figure-note {
+  margin: 0 0 2.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.figure-note__value {
+  display: block;
+  font-size: 2.125rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.figure-note__value .unit {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.figure-note__text {
+  margin: 0.85rem 0 0;
+  font-family: var(--gothic);
+  font-size: 0.875rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+/* 良かった点・不満点 */
+.assessment {
+  margin: 0 0 2rem;
+}
+
+.assessment dt {
+  font-family: var(--gothic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.assessment dd {
+  margin: 0.3rem 0 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.9375rem;
+  line-height: 1.9;
+}
+
+.assessment dd:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.assessment dt.is-negative { color: var(--seal); }
+
+blockquote {
+  margin: 0 0 2.5rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--rule);
+  color: var(--ink-soft);
+}
+
+blockquote p { margin: 0; }
+
+.article__foot {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.article__foot p {
+  margin: 0 0 1.25rem;
+  font-family: var(--gothic);
+  font-size: 0.8125rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.backlink {
+  font-family: var(--gothic);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+/* 記事内の画像(スクリーンショット等) */
+.figure {
+  margin: 0 0 2.5rem;
+}
+
+.figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
+
+.figure figcaption {
+  margin-top: 0.65rem;
+  font-family: var(--gothic);
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+/* ---------- 小さい画面 ---------- */
+
+@media (max-width: 30rem) {
+  html { font-size: 16px; }
+  .intro { padding: 2.75rem 0 2.25rem; }
+  .intro__lead { font-size: 1.625rem; }
+  .article__head { padding: 2.75rem 0 2rem; }
+  .article__title { font-size: 1.625rem; }
+  .figure-note__value { font-size: 1.875rem; }
+}
