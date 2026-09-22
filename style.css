@@ -331,6 +331,21 @@ blockquote {
 
 blockquote p { margin: 0; }
 
+/* コードの例 */
+.article__body > pre {
+  margin: 0 0 2rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  border-left: 1px solid var(--rule);
+  background: #F1F2EE;
+  font-size: 0.8125rem;
+  line-height: 1.8;
+}
+
+.article__body code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace, var(--gothic);
+}
+
 .article__foot {
   margin-top: 3rem;
   padding-top: 1.5rem;

@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # Logs
 *.log
+
+# Claude Code local preview
+.claude/launch.json
