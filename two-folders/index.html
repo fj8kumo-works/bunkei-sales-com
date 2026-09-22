@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作業フォルダが2つあった朝 ― 公開前のブラウザ確認で、消えていた記事に気づいた話 | 文系営業.com</title>
+<meta name="description" content="同じサイトのフォルダが、PCに2つありました。古いほうで作業していたことに公開前のブラウザ確認で気づき、結果としてサイトから消えていた記事を1本救い出すことになった朝の記録です。">
+<link rel="canonical" href="https://bunkei-sales.com/two-folders/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="文系営業.com">
+<meta property="og:title" content="作業フォルダが2つあった朝 ― 公開前のブラウザ確認で、消えていた記事に気づいた話">
+<meta property="og:description" content="同じサイトのフォルダが、PCに2つありました。古いほうで作業していたことに公開前のブラウザ確認で気づき、結果としてサイトから消えていた記事を1本救い出すことになった朝の記録です。">
+<meta property="og:url" content="https://bunkei-sales.com/two-folders/">
+<meta property="og:image" content="https://bunkei-sales.com/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@bunkei_sales">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <header class="masthead">
+    <p class="masthead__name"><a href="/">文系営業.com</a></p>
+  </header>
+
+  <article class="article">
+
+    <div class="article__head">
+      <span class="article__date">2026.09.23</span>
+      <h1 class="article__title">作業フォルダが2つあった朝 ― 公開前のブラウザ確認で、消えていた記事に気づいた話</h1>
+      <p class="article__lead">同じサイトのフォルダが、PCに2つありました。古いほうで作業していたことに、公開前のブラウザ確認で気づいた朝の記録です。</p>
+    </div>
+
+    <div class="article__body">
+
+      <p>今朝、新しい記事を1本公開しました。作業自体は10分ほどで終わるはずでしたが、途中で「自分のPCに、同じサイトのフォルダが2つある」ことに気づき、結果的にサイトから消えていた記事を1本救い出すことになりました。その記録です。</p>
+
+      <h2>いつもどおり、Claude Codeに記事の追加を頼んだ</h2>
+
+      <p>書き上げた記事を、Claude Codeに「既存の記事と同じデザインで追加して、トップの一覧にも載せて」と頼みました。作業前に変更内容を説明してもらい、そのまま完成。公開前に、ローカルのブラウザで表示を確認しました。</p>
+
+      <p>そこで、一覧に<a href="/github-two-pcs/">9月21日の記事</a>がないことに気づきました。</p>
+
+      <h2>開いていたのは、古いほうのフォルダだった</h2>
+
+      <p>原因は、作業していたフォルダでした。デスクトップにある「bunkei-sales」フォルダは、サイトを作り始めたころのもので、Gitで管理していない古いコピーです。9月21日にGitHubとNetlifyの自動公開に切り替えたとき、正式なフォルダは「ドキュメント」の中に新しく作っていました。つまり、同じサイトのフォルダが2つあり、今朝は古いほうで作業していたわけです。</p>
+
+      <p>Netlifyの管理画面を開くと「Deploys from GitHub」の表示。もうフォルダをドラッグして公開する時代ではなかったことも、ここで思い出しました。もし古いフォルダをそのまま公開していたら、21日の記事ごとサイトから消していたところです。</p>
+
+      <h2>実は、すでに1本消えていた</h2>
+
+      <p>Claude Codeに2つのフォルダを比べてもらうと、ズレは片方向ではありませんでした。21日の記事は新しいフォルダにしかなく、逆に9月20日に書いた<a href="/tab-key-suggestion/">Tabキーの記事</a>は、古いフォルダにしかなかったのです。GitHubに移したときに入れ漏れていたようでした。</p>
+
+      <p>本番サイトでTabキーの記事を開いてみると、表示されませんでした。21日から今朝まで、気づかないまま消えていたことになります。</p>
+
+      <h2>正しいフォルダに、全部まとめ直した</h2>
+
+      <p>そこからは、Claude Codeに次のように頼みました。</p>
+
+      <div class="summary-box">
+        <h2>正しいフォルダで、頼んだこと</h2>
+        <ul>
+          <li>Tabキーの記事を、正式なフォルダに移す</li>
+          <li>今回の記事も、正式なフォルダに移す</li>
+          <li>トップの一覧を、日付順に全7記事そろえる</li>
+          <li>終わったら止まって、私のブラウザ確認を待つ</li>
+        </ul>
+      </div>
+
+      <p>確認してからpushすると、1分ほどでNetlifyが自動で公開してくれました。Tabキーの記事も、元のURLのまま戻ってきました。</p>
+
+      <h2>最後に、古いフォルダの名前を変えようとしたら</h2>
+
+      <p>同じ事故を防ぐため、古いフォルダは「bunkei-sales_old」に名前を変えることにしました。ところが「使用中です」と言われて変更できません。Claude Code自身がそのフォルダを作業場所として開いていたこと、そして私がエクスプローラーでも開いたままにしていたことが原因でした。使っているフォルダは、名前を変えさせてもらえないのですね。</p>
+
+      <h2>今回わかったこと</h2>
+
+      <p>一番の学びは、「作業する場所はひとつに決める」ことです。フォルダが2つあると、どちらが最新かを自分でも覚えていられません。AIは頼んだ場所で正確に作業してくれますが、その場所が間違っていれば、正確に間違えます。以前、引き継ぎメモを探してもらったときにも「何を」だけでなく「どこに」を伝える大切さを感じましたが、今回も同じことでした。</p>
+
+      <p>もうひとつは、公開前のブラウザ確認です。ひと手間ですが、今回はこれがなければ、記事をもう1本消していました。</p>
+
+      <p>失敗はしましたが、壊れたものは何もなく、消えていた記事も見つかりました。遠回りのようで、いい朝だったと思います。</p>
+
+    </div>
+
+    <div class="article__foot">
+      <p class="backlink"><a href="/">記録の一覧に戻る</a></p>
+    </div>
+
+  </article>
+
+  <footer class="colophon">
+    <p>文系営業.com</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
