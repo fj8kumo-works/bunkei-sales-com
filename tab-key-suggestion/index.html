@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>グレーの文字は、Tabキーで入力できました ― 文系営業がClaude Codeで知った"提案の受け取り方" | 文系営業.com</title>
+<meta name="description" content="Claude Codeの入力欄に出るグレーの文字。自分で打ち直していたそれは、Tabキー1つで入力できました。日本語入力の感覚とエンジニアの作法のズレに気づいた記録です。">
+<link rel="canonical" href="https://bunkei-sales.com/tab-key-suggestion/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="文系営業.com">
+<meta property="og:title" content="グレーの文字は、Tabキーで入力できました ― 文系営業がClaude Codeで知った&quot;提案の受け取り方&quot;">
+<meta property="og:description" content="Claude Codeの入力欄に出るグレーの文字。自分で打ち直していたそれは、Tabキー1つで入力できました。日本語入力の感覚とエンジニアの作法のズレに気づいた記録です。">
+<meta property="og:url" content="https://bunkei-sales.com/tab-key-suggestion/">
+<meta property="og:image" content="https://bunkei-sales.com/tab-key-suggestion/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@bunkei_sales">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <header class="masthead">
+    <p class="masthead__name"><a href="/">文系営業.com</a></p>
+  </header>
+
+  <article class="article">
+
+    <div class="article__head">
+      <span class="article__date">2026.09.20</span>
+      <h1 class="article__title">グレーの文字は、Tabキーで入力できました ― 文系営業がClaude Codeで知った"提案の受け取り方"</h1>
+      <p class="article__lead">Claude Codeの入力欄に、うっすら出てくるグレーの文字。ずっと自分で打ち直していたそれは、Tabキー1つで入力できました。日本語入力に慣れた文系の感覚と、エンジニアの作法のズレに気づいた記録です。</p>
+    </div>
+
+    <div class="article__body">
+
+      <p><a href="/screenshot-to-copy/">前回の記事</a>で、AIの返事をずっとスクショで渡していた話を書きました。その最後に「もう一つ、知っていれば一瞬だった機能があります」と予告していたのが、今回の話です。</p>
+
+      <h2>入力欄に、グレーの文字が出ている</h2>
+
+      <p>Claude Codeでアプリを作っていると、AIの返事が終わったあと、入力欄にうっすらとグレーの文字が出ていることがあります。</p>
+
+      <figure class="figure">
+        <img src="suggestion-gray.png" alt="Claude Codeの入力欄に「G1にtitle_updatedを入れた」という提案がグレーの文字で表示されている" width="1061" height="372" loading="lazy">
+        <figcaption>入力欄に、グレーで「G1にtitle_updatedを入れた」と出ている状態。</figcaption>
+      </figure>
+
+      <p>これは「次はこう返事しませんか?」という、AIからの提案です。</p>
+
+      <p>この画面の直前、AIからは「スプレッドシートの見出しの右端に、<code>title_updated</code>という列を1つ書き足してください」と頼まれていました。私が次に打つであろう「G1(のセル)に入れました」という報告を、AIが先回りして用意してくれていたわけです。</p>
+
+      <h2>短い提案なら、覚えて打てばいい。でも……</h2>
+
+      <p>私はこのグレーの文字を、「お手本」だと思っていました。見ながら自分で同じように打つものだ、と。</p>
+
+      <p>提案が「③へ」くらいの短いものなら、それで困りません。見て覚えて、自分で打てば済みます。</p>
+
+      <p>困るのは、提案が長いときです。英数字の名前が混ざった長い文を、見比べながら打ち直すのは面倒ですし、打ち間違いも起きます。</p>
+
+      <p>しかも、自分で打ち始めると、グレーの提案は消えてしまいます。</p>
+
+      <figure class="figure">
+        <img src="typing-by-hand.png" alt="入力欄に自分で「G」と1文字打ったところ。グレーの提案は消えている" width="1101" height="365" loading="lazy">
+        <figcaption>自分で「G」と打った瞬間、お手本のグレーの文字は消えてしまいました。</figcaption>
+      </figure>
+
+      <p>お手本を見ながら打つつもりが、1文字目でお手本がなくなる。「これ、どうやって入力するものなんだろう?」と、Claudeに聞いてみました。</p>
+
+      <h2>答えは「Tabキー」でした</h2>
+
+      <p>グレーの提案が出ている状態でTabキーを押すと、提案がそのまま入力欄に入る。それが答えでした。</p>
+
+      <p>試してみると、本当にグレーの文字が黒に変わりました。あとはEnterキーを押すだけで送信できます。</p>
+
+      <figure class="figure">
+        <img src="suggestion-accepted.png" alt="Tabキーを押して、提案「G1にtitle_updatedを入れた」が黒い文字で入力欄に入った状態" width="1087" height="370" loading="lazy">
+        <figcaption>Tabキーを押すと、グレーだった文字が黒に。自分の入力として扱われます。</figcaption>
+      </figure>
+
+      <p>Tabで取り込んだあとは普通の入力と同じなので、少し書き足したり、言い回しを直したりもできます。</p>
+
+      <p>ちなみに、提案が出ている状態でいきなりEnterキーを押すと、提案がそのまま送信されるそうです。便利な反面、中身を確かめずに送ってしまうことにもなるので、長い提案のときは、いったんTabで取り込んで読んでから送るほうが安心です。</p>
+
+      <div class="summary-box">
+        <h2>グレーの提案の受け取り方</h2>
+        <ul>
+          <li>そのままでよければ:Tabで取り込んで、Enterで送信</li>
+          <li>少し直したければ:Tabで取り込んでから、書き足してEnter</li>
+          <li>使わないなら:気にせず自分で打ち始める(提案は消えます)</li>
+        </ul>
+      </div>
+
+      <h2>日本語入力の人は、スペースを押す</h2>
+
+      <p>正直に言うと、「Tabを押す」という発想はまったくありませんでした。</p>
+
+      <p>日本語を入力するとき、私たちはスペースキーで変換して、Enterで確定します。グレーの候補が出たら「スペースかEnterで決める」というのが、長年の手の感覚です。Tabキーは、表計算で隣のセルに移るときくらいしか使っていませんでした。</p>
+
+      <p>一方、Tabで補完するのは、プログラマーの世界では昔からの当たり前だそうです。ターミナルでファイル名を途中まで打ってTabを押すと残りが補われる。コードを書くソフトでグレーの候補が出たら、Tabで確定する。Claude Codeも、その作法に合わせて作られているわけです。</p>
+
+      <p>同じ「グレーの候補」でも、日本語入力の人とエンジニアとでは、受け取るキーが違う。文系の私がつまずいたのは、たぶんそこでした。</p>
+
+      <h2>「え?知らなかったんですか?」</h2>
+
+      <p>エンジニアの人と話していたら、きっとそういう顔をされていたと思います。</p>
+
+      <p>でも、その人たちも最初は誰かに教わったか、たまたま押して気づいたかのどちらかのはずです。当たり前になりすぎて、説明しようとも思わない。だからこそ、つまずいた本人の目線で残しておく意味があると思っています。</p>
+
+      <p>前回のコピーボタンも、今回のTabキーも、知ってしまえば一瞬のことでした。文系営業の「知らなかった」は、たぶん同じ場所で誰かも立ち止まっています。そういう小さなつまずきを、これからもここに記録していきます。</p>
+
+    </div>
+
+    <div class="article__foot">
+      <p>この記事は、文系の非エンジニアとしてAIツールを試した記録です。今後もAI活用の試行錯誤を随時更新していきます。</p>
+      <p class="backlink"><a href="/">記録の一覧に戻る</a></p>
+    </div>
+
+  </article>
+
+  <footer class="colophon">
+    <p>文系営業.com</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
