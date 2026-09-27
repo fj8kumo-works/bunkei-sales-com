@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude CodeにVS Codeを入れてもらったら、見えない「BOM」に激しくつまずいた話 | 文系営業.com</title>
+<meta name="description" content="VS CodeのインストールをClaude Codeに任せたら、再起動しても日本語になりませんでした。原因は、ファイルの先頭に付いた目に見えない「BOM」。つまずいた記録と、AIに再発防止のルールを覚えさせた話です。">
+<link rel="canonical" href="https://bunkei-sales.com/vscode-bom/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="文系営業.com">
+<meta property="og:title" content="Claude CodeにVS Codeを入れてもらったら、見えない「BOM」に激しくつまずいた話">
+<meta property="og:description" content="VS CodeのインストールをClaude Codeに任せたら、再起動しても日本語になりませんでした。原因は、ファイルの先頭に付いた目に見えない「BOM」。つまずいた記録と、AIに再発防止のルールを覚えさせた話です。">
+<meta property="og:url" content="https://bunkei-sales.com/vscode-bom/">
+<meta property="og:image" content="https://bunkei-sales.com/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@bunkei_sales">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <header class="masthead">
+    <p class="masthead__name"><a href="/">文系営業.com</a></p>
+  </header>
+
+  <article class="article">
+
+    <div class="article__head">
+      <span class="article__date">2026.09.27</span>
+      <h1 class="article__title">Claude CodeにVS Codeを入れてもらったら、見えない「BOM」に激しくつまずいた話</h1>
+      <p class="article__lead">VS CodeのインストールをClaude Codeに任せたら、再起動しても日本語になりませんでした。原因は、ファイルの先頭に付いた目に見えない「BOM」。つまずいた記録と、AIに再発防止のルールを覚えさせた話です。</p>
+    </div>
+
+    <div class="article__body">
+
+      <p>結論から言うと、今回のVS Codeのインストールは「苦労した」に尽きます。ただ、その苦労のおかげで、バイブコーディングで使える大事な学びをひとつ手に入れました。</p>
+
+      <h2>メモ帳では最低限すぎた</h2>
+
+      <p>先日、Supabase（アプリのデータを保存するサービス）の作業をしました。Claudeが出してくれたSQLや設定値を、いったんWindowsのメモ帳に貼ってから使っていました。</p>
+
+      <p>メモ帳はテキストを入力するには十分です。でも、コピペするだけならともかく、コードを編集するには最低限すぎると感じました。どこからどこまでが1つの命令なのか、全部同じ黒文字では分かりません。</p>
+
+      <p>「コードを書く人は、もっと便利なものを使っているのでは？」とClaudeに聞いてみたところ、挙がったのがVisual Studio Code（VS Code）でした。</p>
+
+      <h2>なぜVS Code、なぜClaude Codeに任せたのか</h2>
+
+      <p>VS CodeはMicrosoftが出しているアプリで、無料で使えます。普段使っているWindowsやOfficeと同じメーカーなら安心だし、ちょっと使ってみようと思いました。</p>
+
+      <p>せっかくなので、インストールもClaude Codeに任せてみることにしました。ダウンロードして、解凍して、インストールする。この一連の作業を自動化できれば楽だろう、という軽い気持ちです。</p>
+
+      <p>Claude Codeには、こう頼みました。</p>
+
+      <blockquote>
+        <p>VS Codeと日本語化の拡張機能をインストールしてください。初心者なので、何をしているか一言ずつ説明しながら進めてください。</p>
+      </blockquote>
+
+      <figure class="figure">
+        <img src="claude-code-start.png" alt="Claude Codeの開始画面。「ローカル」「フォルダなし」のまま始めた" width="990" height="1002" loading="lazy">
+        <figcaption>Claude Codeの開始画面。「ローカル」「フォルダなし」のまま始めた</figcaption>
+      </figure>
+
+      <p>Claude Codeはコマンドを実行する前に「実行していいか」を確認してくれます。勝手にパソコンをいじられないのは安心です。ここまでは順調でした。</p>
+
+      <h2>つまずきその1：サインインは右下の小さい文字で飛ばせる</h2>
+
+      <p>VS Codeを起動すると、いきなり「Sign in to use GitHub Copilot」という画面が出ました。GitHubかGoogleのどちらでサインインすればいいのか、迷いました。</p>
+
+      <p>実はこのサインインは、MicrosoftのAI機能「GitHub Copilot」を使うためのものです。VS Code自体はサインインしなくても使えます。私はAIにClaude Codeを使うので、今回は不要でした。</p>
+
+      <p>飛ばし方は、画面の右下にある「Continue without Sign in」を押すだけです。大きな青いボタンに目が行くので、正直これは盲点でした。普通の初心者は気が付かないと思います。</p>
+
+      <figure class="figure">
+        <img src="vscode-signin-skip.png" alt="VS Codeのサインイン画面。右下の「Continue without Sign in」で飛ばせる" width="1208" height="683" loading="lazy">
+        <figcaption>VS Codeのサインイン画面。右下の「Continue without Sign in」で飛ばせる</figcaption>
+      </figure>
+
+      <h2>つまずきその2：再起動しても日本語にならない</h2>
+
+      <p>本当に激しくつまずいたのはここからです。日本語化の拡張機能を入れて、表示言語を日本語に切り替え、「Restart」を押しました。ところが、再起動しても英語のままです。</p>
+
+      <p>右下には「The runtime arguments file 'argv.json' contains errors.」というメッセージが出ていました。argv.jsonは、VS Codeが起動するときに読む設定ファイルです。表示言語の設定もここに書かれます。</p>
+
+      <figure class="figure">
+        <img src="argv-json-error.png" alt="再起動しても英語のまま。右下にargv.jsonのエラーが出ている" width="1482" height="961" loading="lazy">
+        <figcaption>再起動しても英語のまま。右下にargv.jsonのエラーが出ている</figcaption>
+      </figure>
+
+      <p>開いてみると、中身は <code>{ "locale": "ja" }</code> の1行だけ。書き方は正しいのに、なぜかエラーになります。</p>
+
+      <p>原因は、VS Codeの一番下のバー（ステータスバー）に表示されていました。右下に「UTF-8 with BOM」とあります。この「BOM」が犯人でした。</p>
+
+      <figure class="figure">
+        <img src="utf8-with-bom.png" alt="中身は正しいのに、右下の表示は「UTF-8 with BOM」" width="1917" height="1017" loading="lazy">
+        <figcaption>中身は正しいのに、右下の表示は「UTF-8 with BOM」</figcaption>
+      </figure>
+
+      <p>直し方は、その「UTF-8 with BOM」をクリックして「Save with Encoding」→「UTF-8」を選ぶだけでした。これでようやく日本語になりました。</p>
+
+      <p>ただ、ここでもうひとつまずき。VS Codeが元の設定を下に書き足したため、設定が2つのかたまりに分かれてしまいました。整理しようとして、今度は先頭の <code>{</code> まで消してしまいました。</p>
+
+      <p>でも、VS Codeは対になる相手がいない最後の <code>}</code> を赤く表示して、左下にエラー件数も出してくれます。おかげで「最初の記号が抜けている？」と自分で気づけました。<code>{</code> を打ち直して保存し、左下が「⊗ 0」になって、ようやく完了です。</p>
+
+      <figure class="figure">
+        <img src="japanese-done.png" alt="日本語化が完了。左下は「⊗ 0」、右下は「UTF-8」" width="1912" height="1011" loading="lazy">
+        <figcaption>日本語化が完了。左下は「⊗ 0」、右下は「UTF-8」</figcaption>
+      </figure>
+
+      <h2>BOMって何？なぜ付いたの？</h2>
+
+      <p>BOM（ボム）は、ファイルの一番先頭に付く、目に見えない小さな「しるし」です。「このファイルはUTF-8という文字の決まりで書かれています」と知らせる名札のようなものだそうです。</p>
+
+      <ul>
+        <li>BOMあり：<code>[見えないしるし]{ "locale": "ja" }</code></li>
+        <li>BOMなし：<code>{ "locale": "ja" }</code></li>
+      </ul>
+
+      <p>画面ではどちらも同じに見えます。でもVS Codeは、この設定ファイルをBOMなしの前提で読むため、先頭のしるしを「知らない文字」と判断して設定を読めなかったのです。</p>
+
+      <p>なぜBOMが付いたのか。Claude Codeに聞いてみると、原因はClaude Code自身がファイルを作ったときの方法だったと、きちんと説明してくれました。</p>
+
+      <p>Windowsに最初から入っている古いPowerShell（バージョン5.1）では、「UTF-8で保存して」と指定するとBOM付きで保存されるのだそうです。昔からの仕様で、つまずく人が多いところだとか。</p>
+
+      <p>AIも間違えます。ただ、原因を聞けば自分のミスだと認めて、初心者にも分かる言葉で説明してくれます。このとき、BOMが付くデメリットを身をもって体験できたのは、結果的によかったと思っています。</p>
+
+      <h2>再発防止：AIへの指示として覚えさせる</h2>
+
+      <p>今回いちばん良かったのは、ここからです。これからSupabaseのキーを入れるファイルやSQLをClaude Codeに作ってもらう場面が増えます。同じ原因でまた動かなくなるのは避けたいところです。</p>
+
+      <p>Claude Codeには「CLAUDE.md」というルール帳を置けます。ユーザーフォルダの <code>.claude\CLAUDE.md</code> に書いておけば、どのフォルダで作業するときも毎回読んでくれます。</p>
+
+      <p>そこで、こう頼みました。</p>
+
+      <blockquote>
+        <p>今後、JSONに限らず .env や .sql など、すべてのテキストファイルはBOMなしのUTF-8で保存するルールを追加してください。CLAUDE.md 自体もBOMなしで保存してください。</p>
+      </blockquote>
+
+      <p>最後の一文は念のためです。ルール帳自体がBOM付きだったら笑えないので。</p>
+
+      <p>Claude Codeは、このファイルがすべての作業に影響するので勝手には書き換えない、と事前に確認してくれました。書き込んだあとは、ファイルの先頭を調べてBOMが付いていないことまで確かめていました。</p>
+
+      <figure class="figure">
+        <img src="claude-md-vscode.png" alt="VS Codeで開いたCLAUDE.md。見出しやコマンドが色分けされている" width="1527" height="452" loading="lazy">
+        <figcaption>VS Codeで開いたCLAUDE.md。見出しやコマンドが色分けされている</figcaption>
+      </figure>
+
+      <p>バイブコーディングで起きたミスを、次から起きないようにAIへの指示として覚えさせられた。これが今回いちばんの収穫です。</p>
+
+      <h2>同じファイルをメモ帳とVS Codeで比べてみた</h2>
+
+      <p>せっかくなので、このCLAUDE.mdをメモ帳でも開いて比べてみました。</p>
+
+      <figure class="figure">
+        <img src="claude-md-notepad.png" alt="同じCLAUDE.mdをメモ帳で開いたところ。全部同じ黒文字" width="1312" height="727" loading="lazy">
+        <figcaption>同じCLAUDE.mdをメモ帳で開いたところ。全部同じ黒文字</figcaption>
+      </figure>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th></th><th>メモ帳</th><th>VS Code</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>見た目</th><td>全部同じ黒文字</td><td>見出しやコマンドが色分け</td></tr>
+            <tr><th>赤い波線</th><td>英単語のスペルミスと誤判定</td><td>書き方の間違いを指摘</td></tr>
+            <tr><th>エラー件数</th><td>なし</td><td>左下に表示</td></tr>
+            <tr><th>文字コード</th><td>右下に表示</td><td>右下に表示、クリックで変更できる</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>面白かったのは赤い波線です。メモ帳では <code>IO.File</code> や <code>WriteAllText</code> に波線が出ますが、これは英単語のスペルミスと勘違いしているだけです。VS Codeの赤線は「ここの書き方がおかしい」と教えてくれるもので、同じ赤線でも役割がまったく違います。</p>
+
+      <p>補足すると、Windows 11のメモ帳も文字コードの表示やタブに対応していて、ちょっとしたメモなら十分です。コードを扱うならVS Code、という使い分けが良さそうです。</p>
+
+      <h2>まとめ</h2>
+
+      <p>インストールを自動化して楽しようとしたら、思わぬところでつまずきました。それでも、得たものは大きかったと思います。</p>
+
+      <ul>
+        <li>VS Codeのサインインは不要。右下の小さい文字で飛ばせる</li>
+        <li>見た目が同じでも、見えない「BOM」で設定が読めなくなることがある</li>
+        <li>AIのミスは、原因を聞いてCLAUDE.mdにルール化すれば再発を防げる</li>
+      </ul>
+
+      <p>VS Codeのカラフルな表示は、これからコードを勉強するうえでも役に立つのではないかと期待しています。一度は挫折したプログラミングですが、色で区切って見せてくれるだけで、少し読めそうな気がしています。</p>
+
+      <p>次は、当初の目的だったSupabaseのSQLをVS Codeで扱ってみる予定です。</p>
+
+    </div>
+
+    <div class="article__foot">
+      <p class="backlink"><a href="/">記録の一覧に戻る</a></p>
+    </div>
+
+  </article>
+
+  <footer class="colophon">
+    <p>文系営業.com</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

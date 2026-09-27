@@ -386,6 +386,49 @@ blockquote p { margin: 0; }
   color: var(--ink-soft);
 }
 
+/* 本文中の箇条書き */
+.article__body > ul {
+  margin: 0 0 1.75rem;
+  padding-left: 1.25rem;
+}
+
+.article__body > ul li { margin-bottom: 0.4rem; }
+.article__body > ul li:last-child { margin-bottom: 0; }
+
+/* 比較表(狭い画面では横スクロール) */
+.table-wrap {
+  margin: 0 0 2.5rem;
+  overflow-x: auto;
+}
+
+.table-wrap table {
+  width: 100%;
+  min-width: 32rem;
+  border-collapse: collapse;
+  font-family: var(--gothic);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.table-wrap th,
+.table-wrap td {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+.table-wrap thead th {
+  border-bottom: 1px solid var(--ink-soft);
+  font-weight: 600;
+}
+
+.table-wrap tbody th {
+  font-weight: 600;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
 /* ---------- 小さい画面 ---------- */
 
 @media (max-width: 30rem) {
