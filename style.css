@@ -231,6 +231,15 @@ a:focus-visible {
   color: var(--ink-soft);
 }
 
+.article__body > h3 {
+  margin: 2.25rem 0 1rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--rule);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
 .article__body > p {
   margin: 0 0 1.75rem;
 }
