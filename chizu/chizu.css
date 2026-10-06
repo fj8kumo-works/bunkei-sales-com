@@ -224,6 +224,41 @@
   margin-top: 0.7rem;
 }
 
+/*
+  押せる枠の下段。左に印、右に「5分で読む →」を置く。
+  新しい5分ページを足すときは、この形をそのまま使う:
+
+  <li class="stop">
+    <a href="/chizu/ページ名/">
+      <span class="stop__title">題名</span>
+      <span class="stop__foot">
+        <span class="stop__tags"><span class="tag tag--free">無料でできる</span></span>
+        <span class="stop__go">5分で読む →</span>
+      </span>
+    </a>
+  </li>
+*/
+.stop__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.7rem;
+}
+
+.stop__foot .stop__tags { margin-top: 0; }
+
+.stop__go {
+  margin-left: auto;
+  font-family: var(--gothic);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--seal);
+  white-space: nowrap;
+}
+
 /* まだ無いページは、押せないことが分かるように点線と薄い文字 */
 .stop--soon {
   border-style: dashed;
