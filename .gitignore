@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Claude Code local preview
 .claude/launch.json
+
+# 確認用のスクリーンショット(公開しない)
+_screenshots/

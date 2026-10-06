@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>文系営業.com</title>
-<meta name="description" content="メーカーの営業として現場で試した道具と、文系のままコードに触れはじめた記録。">
+<title>文系営業.com | プログラミングを知らない私が、つまずいた場所の地図。</title>
+<meta name="description" content="プログラミングを知らない文系営業が、バイブコーディングでつまずいた場所の地図。あなたが今止まっている所から、5分で抜け出せるページへ案内します。">
 <link rel="canonical" href="https://bunkei-sales.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="文系営業.com">
-<meta property="og:title" content="文系営業.com">
-<meta property="og:description" content="メーカーの営業として現場で試した道具と、文系のままコードに触れはじめた記録。">
+<meta property="og:title" content="プログラミングを知らない私が、つまずいた場所の地図。">
+<meta property="og:description" content="あなたが今止まっている所から、5分で抜け出せます。文系営業の私がバイブコーディングで止まった画面を、全部見せます。">
 <meta property="og:url" content="https://bunkei-sales.com/">
 <meta property="og:image" content="https://bunkei-sales.com/ogp.png">
 <meta property="og:image:width" content="1200">
@@ -21,6 +21,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/chizu/chizu.css">
 </head>
 <body>
 
@@ -30,198 +31,132 @@
     <p class="masthead__name">文系営業.com</p>
   </header>
 
-  <div class="intro">
-    <h1 class="intro__lead">現場で試したことの記録</h1>
-    <p class="intro__note">メーカーの営業として実際に使った道具と、文系のままコードに触れはじめた過程を書き留めています。うまくいったことも、いかなかったことも、そのまま残します。</p>
+  <div class="hero">
+    <h1 class="hero__catch"><span>プログラミングを知らない私が、</span><span>つまずいた場所の地図。</span></h1>
+    <p class="hero__sub"><span>あなたが今止まっている所から、</span><span>5分で抜け出せます。</span></p>
+    <p class="hero__note">2026年9月、文系営業の私がバイブコーディングを始めました。止まった画面を、全部見せます。</p>
   </div>
 
-  <ul class="records">
+  <section class="map" aria-labelledby="map-title">
 
-    <li class="record">
-      <span class="record__date">2026.10.04</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/notion-seiri-68000ji/">文系営業が、6万8千字に膨らんだNotionのページをAIと整理した話</a>
-        </h2>
-        <p class="record__summary">自分専用アプリの記録を書き足し続けたNotionのページが約6万8千字に。Claudeに頼んで「入口」と子ページ6つに分け、プログラムで突き合わせたら、AIの写し間違いが2か所見つかりました。</p>
-      </div>
-    </li>
+    <h2 class="map__title" id="map-title">今、どこで止まっていますか？</h2>
 
-    <li class="record">
-      <span class="record__date">2026.10.04</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/ai-chokan-gamen/">文系営業が、答え合わせのあとでいつきさんの「AI朝刊」の画面を見てみた</a>
-        </h2>
-        <p class="record__summary">有料noteを読む前に同じアプリを作り、答え合わせまで済ませたあと、初めていつきさんの「AI朝刊」の画面を開きました。入口のちがう2つのアプリを比べて見えた、文章では分からなかった違いの記録です。</p>
-      </div>
-    </li>
+    <p class="map__legend">
+      <span class="map__legend-label">印の見方</span>
+      <span class="tag tag--free">無料でできる</span>
+      <span class="tag tag--paid">お金がかかる場合あり</span>
+    </p>
 
-    <li class="record">
-      <span class="record__date">2026.10.02</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/claude-eigo-henji/">生成AI(Claude)が突然英語で返事してくるので、ツッコんでみた</a>
-        </h2>
-        <p class="record__summary">毎晩の作業記録をClaudeに頼んだら、報告が全部英語で返ってきました。週一くらいで起きるこの現象について、なぜ英語になるのかの推測と、私なりの対処法の記録です。</p>
-      </div>
-    </li>
+    <ol class="road">
 
-    <li class="record">
-      <span class="record__date">2026.09.30</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/ai-hisho-tsukutte-mita/">文系営業が、AIで秘書を作ってみた</a>
-        </h2>
-        <p class="record__summary">ニュース要約アプリに、毎朝声をかけてくれる秘書がほしくなりました。画像生成AI「NovelAI」の無料トライアル30枚で、秘書1人と表情11種類を作ってみた記録です。</p>
-      </div>
-    </li>
+      <li class="stage">
+        <p class="stage__label">第1部</p>
+        <h3 class="stage__name">はじめの一歩</h3>
+        <p class="stage__scope">自分のパソコンで動かすまで</p>
 
-    <li class="record">
-      <span class="record__date">2026.09.29</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/claude-api-betsu-ryoukin/">Claudeの月額プランがあるのに、なぜAPIは別料金？文系営業が$5で試した</a>
-        </h2>
-        <p class="record__summary">AIニュースを要約する自分専用アプリを作っていたら、「従量課金」という言葉が出てきました。Claudeの月額プランとAPIは何が違うのか。$5だけチャージして試した結果、費用は6件で約6円でした。</p>
-      </div>
-    </li>
+        <ul class="stops">
+          <li class="stop stop--soon">
+            <span class="stop__title">Claude CodeとGitHub 最初の5分でつまずく3か所(Windows編)</span>
+            <span class="stop__tags">
+              <span class="tag tag--free">無料でできる</span>
+              <span class="tag tag--soon">準備中</span>
+            </span>
+          </li>
+        </ul>
 
-    <li class="record">
-      <span class="record__date">2026.09.28</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/claude-shortcut-shiroi-icon/">Claude Codeに作ってもらったショートカットが、ある日白くなった話</a>
-        </h2>
-        <p class="record__summary">Claude Codeに作ってもらったデスクトップのショートカットが、ある日真っ白なアイコンになりました。原因は、アイコンの場所を固定で書いていたこと。直し方と、AIに頼むときの教訓の話です。</p>
-      </div>
-    </li>
+        <div class="diary">
+          <p class="diary__label">体験記で読む</p>
+          <ul class="diary__list">
+            <li><a href="/vscode-bom/">VS Codeを入れたら、見えない「BOM」につまずいた話</a></li>
+            <li><a href="/tab-key-suggestion/">グレーの文字は、Tabキーで入力できました</a></li>
+            <li><a href="/screenshot-to-copy/">AIとの会話、ずっとスクショで渡してました</a></li>
+          </ul>
+        </div>
+      </li>
 
-    <li class="record">
-      <span class="record__date">2026.09.27</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/vscode-bom/">Claude CodeにVS Codeを入れてもらったら、見えない「BOM」に激しくつまずいた話</a>
-        </h2>
-        <p class="record__summary">VS CodeのインストールをClaude Codeに任せたら、再起動しても日本語になりませんでした。原因は、ファイルの先頭に付いた目に見えない「BOM」。つまずいた記録と、AIに再発防止のルールを覚えさせた話です。</p>
-      </div>
-    </li>
+      <li class="stage stage--gate">
+        <p class="stage__label">境目①</p>
+        <h3 class="stage__name">はじめて人に見せる</h3>
+        <p class="stage__scope">公開するまで</p>
 
-    <li class="record">
-      <span class="record__date">2026.09.26</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/mail-kotei-denwa/">バイブコーディングを始めたら、メールが「家の固定電話」になった話</a>
-        </h2>
-        <p class="record__summary">ブログを立ち上げてバイブコーディングを始めたら、Googleアカウントにいろいろなサービスから英語のメールが届くようになりました。その中には、放っておけない警告まで混ざっていました。</p>
-      </div>
-    </li>
+        <p class="stage__empty">5分で解決するページは、いま準備中です。</p>
 
-    <li class="record">
-      <span class="record__date">2026.09.25</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/tsuideni-naoshite/">「ついでに直して」が通じなかった話 ― AIにできること・できないことの境目</a>
-        </h2>
-        <p class="record__summary">Googleドライブのパワポの誤字を見つけてくれたClaude。ついでに直してもらおうとしたら、できませんでした。AIが「読める」ことと「直せる」ことの境目の話です。</p>
-      </div>
-    </li>
+        <div class="diary">
+          <p class="diary__label">体験記で読む</p>
+          <ul class="diary__list">
+            <li><a href="/github-two-pcs/">英語の認証画面におびえながら、GitHubで2台体制を作った話</a></li>
+            <li><a href="/two-folders/">作業フォルダが2つあった朝</a></li>
+            <li><a href="/mail-kotei-denwa/">メールが「家の固定電話」になった話</a></li>
+          </ul>
+        </div>
+      </li>
 
-    <li class="record">
-      <span class="record__date">2026.09.23</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/programming-hon-yomikaeshi/">挫折したプログラミング本を、バイブコーディングを始めた今読み返してみた</a>
-        </h2>
-        <p class="record__summary">4年前に途中で閉じたプログラミング本を、AIと一緒にアプリを作るようになった今、もう一度開きました。AIへの頼み方のヒントが、読み飛ばしていたところに埋まっていました。</p>
-      </div>
-    </li>
+      <li class="stage">
+        <p class="stage__label">第2部</p>
+        <h3 class="stage__name">人に使ってもらう</h3>
 
-    <li class="record">
-      <span class="record__date">2026.09.23</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/two-folders/">作業フォルダが2つあった朝 ― 公開前のブラウザ確認で、消えていた記事に気づいた話</a>
-        </h2>
-        <p class="record__summary">同じサイトのフォルダが、PCに2つありました。古いほうで作業していたことに、公開前のブラウザ確認で気づいた朝の記録です。</p>
-      </div>
-    </li>
+        <p class="stage__empty">5分で解決するページは、いま準備中です。</p>
 
-    <li class="record">
-      <span class="record__date">2026.09.23</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/programming-yameta-riyuu/">2022年、文系営業の私がプログラミングをいったん止めた理由</a>
-        </h2>
-        <p class="record__summary">いまはAIと一緒にコードを書いていますが、その前に一度プログラミングで止まった時期がありました。2022年に買った2冊の本と、続かなかった2つの理由の記録です。</p>
-      </div>
-    </li>
+        <div class="diary">
+          <p class="diary__label">体験記で読む</p>
+          <ul class="diary__list">
+            <li><a href="/claude-api-betsu-ryoukin/">Claudeの月額プランがあるのに、なぜAPIは別料金？</a></li>
+          </ul>
+        </div>
+      </li>
 
-    <li class="record">
-      <span class="record__date">2026.09.21</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/github-two-pcs/">英語の認証画面におびえながら、GitHubでMac miniとノートPCの2台体制を作った話</a>
-        </h2>
-        <p class="record__summary">家ではMac mini、外ではWindowsのノートPC。作業の続きをどちらでもするために、同じ設定を2回やり、英語だらけの画面で手が止まった記録です。</p>
-      </div>
-    </li>
+      <li class="stage stage--ahead">
+        <h3 class="stage__name">これから歩く道</h3>
+        <p class="stage__empty">この先は、私もまだ歩いていません。進んだら、ここに書き足します。</p>
+      </li>
 
-    <li class="record">
-      <span class="record__date">2026.09.20</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/tab-key-suggestion/">グレーの文字は、Tabキーで入力できました ― 文系営業がClaude Codeで知った"提案の受け取り方"</a>
-        </h2>
-        <p class="record__summary">入力欄にうっすら出るグレーの文字。自分で打ち直していたそれは、Tabキー1つで入力できました。日本語入力の感覚とエンジニアの作法のズレの話です。</p>
-      </div>
-    </li>
+    </ol>
 
-    <li class="record">
-      <span class="record__date">2026.09.20</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/screenshot-to-copy/">AIとの会話、ずっとスクショで渡してました ― 文系営業がClaude Codeで気づいた"コピーボタン"</a>
-        </h2>
-        <p class="record__summary">Windowsを30年使ってきたのに、AIの返事はスクショで何枚も渡していました。スマホから入った人がはまりやすい、ちょっと恥ずかしい思い込みの記録です。</p>
-      </div>
-    </li>
+  </section>
 
-    <li class="record">
-      <span class="record__date">2026.09.19</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/notion-with-claude/">何年も挫折したNotionが、AIに「頼んだら」使えるようになった話</a>
-        </h2>
-        <p class="record__summary">動画を見ても調べても使えなかったNotion。つまずいていたのは操作ではなく、「何を残したいか」を言葉にできていなかったことでした。</p>
-      </div>
-    </li>
+  <section class="block" id="taikenki" aria-labelledby="taikenki-title">
 
-    <li class="record">
-      <span class="record__date">2026.09.15</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/monodukuri-to-vibecoding/">「文系だからプログラミングはできない」という思い込みが、ようやく外れた話</a>
-        </h2>
-        <p class="record__summary">営業も模型も、やっていたのは「言語化してから実装する」という同じ手続きでした。実装側の言語が日本語に置き換わった瞬間に起きたことの記録です。</p>
-      </div>
-    </li>
+    <h2 class="block__title" id="taikenki-title">体験記</h2>
+    <p class="block__note">つまずいたその日に書いた記録です。新しい順に並べています。</p>
 
-    <li class="record">
-      <span class="record__date">2026.09.14</span>
-      <div>
-        <h2 class="record__title">
-          <a href="/plaud-notepin-s/">半年使ったAnkerを、なぜPlaudに乗り換えたのか</a>
-        </h2>
-        <p class="record__summary">録音デバイスは「小さければいい」わけではありませんでした。商談の現場で見えてきた、2台のICレコーダーの本当の違いです。</p>
-      </div>
-    </li>
+    <ul class="log">
+      <li class="log__item"><span class="log__date">2026.10.04</span><a href="/notion-seiri-68000ji/">文系営業が、6万8千字に膨らんだNotionのページをAIと整理した話</a></li>
+      <li class="log__item"><span class="log__date">2026.10.04</span><a href="/ai-chokan-gamen/">文系営業が、答え合わせのあとでいつきさんの「AI朝刊」の画面を見てみた</a></li>
+      <li class="log__item"><span class="log__date">2026.10.02</span><a href="/claude-eigo-henji/">生成AI(Claude)が突然英語で返事してくるので、ツッコんでみた</a></li>
+      <li class="log__item"><span class="log__date">2026.09.30</span><a href="/ai-hisho-tsukutte-mita/">文系営業が、AIで秘書を作ってみた</a></li>
+      <li class="log__item"><span class="log__date">2026.09.29</span><a href="/claude-api-betsu-ryoukin/">Claudeの月額プランがあるのに、なぜAPIは別料金？文系営業が$5で試した</a></li>
+      <li class="log__item"><span class="log__date">2026.09.28</span><a href="/claude-shortcut-shiroi-icon/">Claude Codeに作ってもらったショートカットが、ある日白くなった話</a></li>
+      <li class="log__item"><span class="log__date">2026.09.27</span><a href="/vscode-bom/">Claude CodeにVS Codeを入れてもらったら、見えない「BOM」に激しくつまずいた話</a></li>
+      <li class="log__item"><span class="log__date">2026.09.26</span><a href="/mail-kotei-denwa/">バイブコーディングを始めたら、メールが「家の固定電話」になった話</a></li>
+      <li class="log__item"><span class="log__date">2026.09.25</span><a href="/tsuideni-naoshite/">「ついでに直して」が通じなかった話 ― AIにできること・できないことの境目</a></li>
+      <li class="log__item"><span class="log__date">2026.09.23</span><a href="/programming-hon-yomikaeshi/">挫折したプログラミング本を、バイブコーディングを始めた今読み返してみた</a></li>
+      <li class="log__item"><span class="log__date">2026.09.23</span><a href="/two-folders/">作業フォルダが2つあった朝 ― 公開前のブラウザ確認で、消えていた記事に気づいた話</a></li>
+      <li class="log__item"><span class="log__date">2026.09.23</span><a href="/programming-yameta-riyuu/">2022年、文系営業の私がプログラミングをいったん止めた理由</a></li>
+      <li class="log__item"><span class="log__date">2026.09.21</span><a href="/github-two-pcs/">英語の認証画面におびえながら、GitHubでMac miniとノートPCの2台体制を作った話</a></li>
+      <li class="log__item"><span class="log__date">2026.09.20</span><a href="/tab-key-suggestion/">グレーの文字は、Tabキーで入力できました ― 文系営業がClaude Codeで知った"提案の受け取り方"</a></li>
+      <li class="log__item"><span class="log__date">2026.09.20</span><a href="/screenshot-to-copy/">AIとの会話、ずっとスクショで渡してました ― 文系営業がClaude Codeで気づいた"コピーボタン"</a></li>
+      <li class="log__item"><span class="log__date">2026.09.19</span><a href="/notion-with-claude/">何年も挫折したNotionが、AIに「頼んだら」使えるようになった話</a></li>
+      <li class="log__item"><span class="log__date">2026.09.15</span><a href="/monodukuri-to-vibecoding/">「文系だからプログラミングはできない」という思い込みが、ようやく外れた話</a></li>
+      <li class="log__item"><span class="log__date">2026.09.14</span><a href="/plaud-notepin-s/">半年使ったAnkerを、なぜPlaudに乗り換えたのか</a></li>
+    </ul>
 
-  </ul>
+  </section>
+
+  <section class="block" aria-labelledby="author-title">
+
+    <h2 class="block__title" id="author-title">書いている人</h2>
+
+    <div class="author">
+      <p>メーカーで営業を約20年続けています。プログラミングは未経験のまま、2026年9月にバイブコーディングを始めました。</p>
+      <p>つまずいた画面と、そこからの抜け出し方を、そのまま残しています。</p>
+      <p class="author__link">X：<a href="https://x.com/bunkei_sales" rel="noopener">@bunkei_sales</a></p>
+    </div>
+
+  </section>
 
   <footer class="colophon">
     <p>文系営業.com</p>
-    <p>営業とAI活用の試行錯誤を、随時更新しています。</p>
+    <p>つまずいた場所の地図を、随時書き足しています。</p>
   </footer>
 
 </div>
