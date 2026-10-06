@@ -267,7 +267,225 @@
 
 .diary__list a:hover { color: var(--seal); }
 
+/* ---------- 5分で解決するページの型 ---------- */
+
+.guide { max-width: var(--measure); }
+
+.guide p { margin: 0 0 1.25rem; }
+
+/* 英語の画面表示とコマンド。訳さずそのまま見せるので、地の文から浮かせる */
+.guide code {
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+  background: #ECEDE8;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace, var(--gothic);
+  font-size: 0.875em;
+  overflow-wrap: anywhere;
+}
+
+.guide__head { padding: 3.5rem 0 2rem; }
+
+.guide__stage {
+  margin: 0;
+  font-family: var(--gothic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  color: var(--seal);
+}
+
+.guide__title {
+  margin: 0.75rem 0 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+/* このページについて */
+.about {
+  padding: 1.125rem 1.25rem;
+  border: 1px solid var(--ink);
+  background: #fff;
+  font-family: var(--gothic);
+}
+
+.about__title {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.about__list { margin: 0; }
+
+.about__row {
+  display: grid;
+  grid-template-columns: 6.5em 1fr;
+  column-gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.about__row dt {
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.about__row dd { margin: 0; }
+
+/* 準備 */
+.prep {
+  margin-top: 2rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--rule);
+}
+
+.prep__title {
+  margin: 0 0 0.35rem;
+  font-family: var(--gothic);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.prep p {
+  margin: 0;
+  font-family: var(--gothic);
+  font-size: 0.875rem;
+  line-height: 1.9;
+}
+
+/* つまずき */
+.trap {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--ink);
+}
+
+.trap__num {
+  margin: 0;
+  font-family: var(--gothic);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  color: var(--seal);
+}
+
+.trap__title {
+  margin: 0.35rem 0 0;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* 画面 → 何が起きているか → 抜け出し方 の小見出し */
+.trap__part {
+  margin: 2rem 0 0.75rem;
+  font-family: var(--gothic);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.trap .figure { margin-bottom: 0; }
+.trap .figure a { display: block; }
+
+.steps {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.steps > li {
+  margin-bottom: 0.9rem;
+  padding-left: 0.25rem;
+}
+
+.steps > li:last-child { margin-bottom: 0; }
+.steps > li::marker { font-weight: 600; color: var(--seal); }
+
+.steps__choices {
+  margin: 0.5rem 0 0;
+  padding-left: 1.5rem;
+}
+
+.steps__choices li { margin-bottom: 0.25rem; }
+
+/* 手順の順番には入らない「こうなったら」の補足 */
+.guide .steps__note {
+  margin: 1.5rem 0 0;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--rule);
+  font-family: var(--gothic);
+  font-size: 0.875rem;
+  line-height: 1.9;
+}
+
+/* ここまでできたら */
+.done {
+  margin-top: 3.5rem;
+  padding: 1.375rem 0 1.375rem 1.25rem;
+  border-left: 3px solid var(--seal);
+}
+
+.done__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.done p { margin: 0; }
+
+.done .done__next {
+  margin-top: 0.75rem;
+  font-family: var(--gothic);
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+/* この話の体験記と、地図に戻るリンク */
+.guide__foot {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--gothic);
+}
+
+.guide__foot .guide__diary-label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.guide__foot .guide__diary {
+  margin: 0.25rem 0 1.75rem;
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.guide__foot .backlink { margin: 0; }
+
+.guide__foot .backlink a {
+  display: inline-block;
+  padding: 0.6rem 0;
+}
+
 @media (max-width: 30rem) {
+  .guide__head { padding: 2.75rem 0 1.75rem; }
+  .guide__title { font-size: 1.4375rem; }
+  .trap__title { font-size: 1.1875rem; }
+  .about { padding: 1rem; }
   .hero { padding: 2.75rem 0 2.25rem; }
   .hero__sub { font-size: 1rem; }
   .map__title { font-size: 1.3125rem; }

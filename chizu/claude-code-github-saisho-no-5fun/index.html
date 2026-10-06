@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude CodeとGitHub 最初の5分でつまずく3か所(Windows編) | 文系営業.com</title>
+<meta name="description" content="WindowsでClaude Codeを初めて動かし、GitHubにつなぐときに止まりやすい3か所と、その抜け出し方。止まった画面をそのまま見せます。約5分、無料でできます。">
+<link rel="canonical" href="https://bunkei-sales.com/chizu/claude-code-github-saisho-no-5fun/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="文系営業.com">
+<meta property="og:title" content="Claude CodeとGitHub 最初の5分でつまずく3か所(Windows編)">
+<meta property="og:description" content="WindowsでClaude Codeを初めて動かし、GitHubにつなぐときに止まりやすい3か所と、その抜け出し方。止まった画面をそのまま見せます。約5分、無料でできます。">
+<meta property="og:url" content="https://bunkei-sales.com/chizu/claude-code-github-saisho-no-5fun/">
+<meta property="og:image" content="https://bunkei-sales.com/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@bunkei_sales">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/chizu/chizu.css">
+</head>
+<body>
+
+<!--
+  5分ページの型。次のページは、このファイルをコピーして文章と画像を差し替える。
+  順番: 題名 → このページについて → 準備 → つまずき(画面 → 何が起きているか → 抜け出し方)
+        → ここまでできたら → この話の体験記 → 地図に戻る
+-->
+
+<div class="shell">
+
+  <header class="masthead">
+    <p class="masthead__name"><a href="/">文系営業.com</a></p>
+  </header>
+
+  <article class="guide">
+
+    <!-- 1. 題名 -->
+    <div class="guide__head">
+      <p class="guide__stage">第1部 はじめの一歩</p>
+      <h1 class="guide__title">Claude CodeとGitHub 最初の5分でつまずく3か所(Windows編)</h1>
+    </div>
+
+    <!-- 2. このページについて -->
+    <section class="about" aria-labelledby="about-title">
+      <h2 class="about__title" id="about-title">このページについて</h2>
+      <dl class="about__list">
+        <div class="about__row">
+          <dt>読む時間</dt>
+          <dd>約5分</dd>
+        </div>
+        <div class="about__row">
+          <dt>こんな人向け</dt>
+          <dd>WindowsでClaude Codeを初めて動かし、GitHubにつなぐ人</dd>
+        </div>
+        <div class="about__row">
+          <dt>費用</dt>
+          <dd><span class="tag tag--free">無料でできる</span></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- 3. 準備 -->
+    <section class="prep" aria-labelledby="prep-title">
+      <h2 class="prep__title" id="prep-title">準備</h2>
+      <p>Git(作業の記録を残す道具)とGitHub CLI(GitHubをターミナルから操作する道具)が入っていない場合は、Claude Codeに「GitとGitHub CLIをインストールして」と頼みます。入れたら、ターミナル(文字で指示を打ち込む黒い画面)を開き直します。</p>
+    </section>
+
+    <!-- 4. つまずき -->
+    <section class="trap" aria-labelledby="trap1-title">
+      <p class="trap__num">つまずき1</p>
+      <h2 class="trap__title" id="trap1-title">起動したら英語で「このフォルダを信頼しますか？」と聞かれた</h2>
+
+      <h3 class="trap__part">こんな画面が出た</h3>
+      <figure class="figure">
+        <a href="01-trust-folder.png"><img src="01-trust-folder.png" alt="claude と入力した直後の画面。Accessing workspace: C:\WINDOWS\system32 と表示され、No, exit と Yes, I trust this folder のどちらかを選ぶよう聞かれている" width="760" height="440"></a>
+        <figcaption><code>No, exit</code> か <code>Yes, I trust this folder</code> のどちらかを選ぶ画面。画像を押すと大きく表示します。</figcaption>
+      </figure>
+
+      <h3 class="trap__part">何が起きているか</h3>
+      <p>PowerShell(Windowsのターミナル)を開いた直後の場所(<code>C:\WINDOWS\system32</code>)で、Claude Codeを起動しています。ここはWindowsの大事なフォルダです。</p>
+      <p>PowerShellを「管理者として実行」で開くと、ここから始まることがあります。普通に開くと自分のユーザーフォルダから始まります。</p>
+
+      <h3 class="trap__part">こうすれば抜け出せる</h3>
+      <ol class="steps">
+        <li><code>No, exit</code> を選んで抜けます。</li>
+        <li><code>cd</code>(場所を移動する命令)で、自分の作業フォルダへ移動します。<br>例：<code>cd $HOME\Documents</code></li>
+        <li>もう一度 <code>claude</code> と入力します。</li>
+        <li>同じ質問がもう一度出ます。今度は <code>Yes, I trust this folder</code> を選びます。</li>
+      </ol>
+    </section>
+
+    <section class="trap" aria-labelledby="trap2-title">
+      <p class="trap__num">つまずき2</p>
+      <h2 class="trap__title" id="trap2-title">Gitに登録する「名前」と「メールアドレス」を聞かれた</h2>
+
+      <h3 class="trap__part">こんな画面が出た</h3>
+      <figure class="figure">
+        <a href="02-git-name-email.png"><img src="02-git-name-email-crop.png" alt="Claude Codeに名前を聞かれて答えたあと、「Gitの名前とメールアドレスを設定しました。」と表示され、その下に user.name の行が出ている画面" width="510" height="88" loading="lazy"></a>
+        <figcaption>Claude Codeに名前を聞かれて、答えたあとの画面。灰色の部分は、私のユーザー名を隠しています。画像を押すと、画面の全体を表示します。</figcaption>
+      </figure>
+
+      <h3 class="trap__part">何が起きているか</h3>
+      <p>作業の記録に、誰がやったかを残すための設定です。</p>
+
+      <h3 class="trap__part">こうすれば抜け出せる</h3>
+      <ol class="steps">
+        <li>名前は、GitHubのユーザー名にします。</li>
+        <li>メールアドレスは、GitHubに登録したものにします。メールアドレスが違うと、自分のアカウントの作業として記録されません。</li>
+      </ol>
+    </section>
+
+    <section class="trap" aria-labelledby="trap3-title">
+      <p class="trap__num">つまずき3</p>
+      <h2 class="trap__title" id="trap3-title"><code>gh auth login</code> で英語の質問が4つ続く</h2>
+
+      <h3 class="trap__part">こんな画面が出た</h3>
+      <figure class="figure">
+        <a href="03-gh-auth-login.png"><img src="03-gh-auth-login-crop.png" alt="gh auth login と入力したあとの画面。英語の質問が4つ続き、GitHub.com、HTTPS、Yes、Login with a web browser を選んでいる。そのあと One-time code が表示され、Authentication complete. と Logged in as が出ている" width="890" height="249" loading="lazy"></a>
+        <figcaption>質問4つに答え終わり、ログインできたところまでの画面。灰色の部分は、私の名前を隠しています。画像を押すと、画面の全体を表示します。</figcaption>
+      </figure>
+
+      <h3 class="trap__part">何が起きているか</h3>
+      <p>パソコンからGitHubにログインするための質問です。</p>
+
+      <h3 class="trap__part">こうすれば抜け出せる</h3>
+      <ol class="steps">
+        <li>4つの質問に、次の順で選びます。
+          <ol class="steps__choices">
+            <li><code>GitHub.com</code></li>
+            <li><code>HTTPS</code></li>
+            <li><code>Yes</code></li>
+            <li><code>Login with a web browser</code></li>
+          </ol>
+        </li>
+        <li>8桁のコードが表示されます。コードは自動でコピーされます。</li>
+        <li>Enterを押してブラウザを開き、コードを貼ります。</li>
+        <li>ブラウザで <code>Authorize github</code> を押します。</li>
+        <li>そのあと <code>Confirm access</code> という画面が出て、メールでの本人確認(<code>Verify via email</code>)を求められることがあります。届いたメールのとおりに進めます。</li>
+        <li>ターミナルに <code>Authentication complete.</code> と出たら完了です。</li>
+      </ol>
+      <p class="steps__note">しばらく放っておくと時間切れになります。そのときは <code>gh auth login</code> をもう一度実行すると、新しいコードが出ます。</p>
+    </section>
+
+    <!-- 5. ここまでできたら -->
+    <section class="done" aria-labelledby="done-title">
+      <h2 class="done__title" id="done-title">ここまでできたら</h2>
+      <p>約5分で、Claude Codeをパソコンで動かし、GitHubにログインできました。</p>
+      <p class="done__next">次は、作ったものをGitHubに保存します(準備中)。</p>
+    </section>
+
+    <!-- 6. この話の体験記 / 7. 地図に戻る -->
+    <div class="guide__foot">
+      <p class="guide__diary-label">この話の体験記</p>
+      <p class="guide__diary"><a href="/github-two-pcs/">英語の認証画面におびえながら、GitHubでMac miniとノートPCの2台体制を作った話</a></p>
+      <p class="backlink"><a href="/">地図に戻る</a></p>
+    </div>
+
+  </article>
+
+  <footer class="colophon">
+    <p>文系営業.com</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
