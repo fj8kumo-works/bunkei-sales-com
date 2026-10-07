@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude CodeとGitHub 最初の5分でつまずく3か所(Mac編) | 文系営業.com</title>
+<meta name="description" content="MacでClaude Codeを初めて動かし、GitHubにつなぐときに止まりやすい3か所と、その抜け出し方。止まった画面をそのまま見せます。約5分、無料でできます。">
+<link rel="canonical" href="https://bunkei-sales.com/chizu/claude-code-github-saisho-no-5fun-mac/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="文系営業.com">
+<meta property="og:title" content="Claude CodeとGitHub 最初の5分でつまずく3か所(Mac編)">
+<meta property="og:description" content="MacでClaude Codeを初めて動かし、GitHubにつなぐときに止まりやすい3か所と、その抜け出し方。止まった画面をそのまま見せます。約5分、無料でできます。">
+<meta property="og:url" content="https://bunkei-sales.com/chizu/claude-code-github-saisho-no-5fun-mac/">
+<meta property="og:image" content="https://bunkei-sales.com/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@bunkei_sales">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/chizu/chizu.css">
+</head>
+<body>
+
+<!--
+  5分ページの型。Windows編(claude-code-github-saisho-no-5fun)と同じ順番。
+  順番: 題名 → このページについて → 準備 → つまずき(画面 → 何が起きているか → 抜け出し方)
+        → ここまでできたら → この話の体験記 → 地図に戻る
+-->
+
+<div class="shell">
+
+  <header class="masthead">
+    <p class="masthead__name"><a href="/">文系営業.com</a></p>
+  </header>
+
+  <article class="guide">
+
+    <!-- 1. 題名 -->
+    <div class="guide__head">
+      <p class="guide__stage">第1部 はじめの一歩</p>
+      <h1 class="guide__title">Claude CodeとGitHub 最初の5分でつまずく3か所(Mac編)</h1>
+    </div>
+
+    <!-- 2. このページについて -->
+    <section class="about" aria-labelledby="about-title">
+      <h2 class="about__title" id="about-title">このページについて</h2>
+      <dl class="about__list">
+        <div class="about__row">
+          <dt>読む時間</dt>
+          <dd>約5分</dd>
+        </div>
+        <div class="about__row">
+          <dt>こんな人向け</dt>
+          <dd>MacでClaude Codeを初めて動かし、GitHubにつなぐ人</dd>
+        </div>
+        <div class="about__row">
+          <dt>費用</dt>
+          <dd><span class="tag tag--free">無料でできる</span></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- 3. 準備 -->
+    <section class="prep" aria-labelledby="prep-title">
+      <h2 class="prep__title" id="prep-title">準備</h2>
+      <p>ターミナル(文字で指示を打ち込む画面)は、<code>command</code>+<code>スペース</code> で検索窓を出し、「ターミナル」と打つと開けます。</p>
+      <p>Git(作業の記録を残す道具)とGitHub CLI(GitHubをターミナルから操作する道具)は、Windows編と同じくClaude Codeに「GitとGitHub CLIをインストールして」と頼みます。Macでは、その途中でつまずきやすい所があります。</p>
+    </section>
+
+    <!-- 4. つまずき -->
+    <section class="trap" aria-labelledby="trap1-title">
+      <p class="trap__num">つまずき1</p>
+      <h2 class="trap__title" id="trap1-title"><code>cd</code> でフォルダに移動できない</h2>
+
+      <h3 class="trap__part">こんな画面が出た</h3>
+      <figure class="figure">
+        <a href="01-cd.png"><img src="01-cd-crop.png" alt="Macのターミナルに cd とだけ打って止まっている画面。その下にFinderのウインドウがあり、bunkei-sales というフォルダが見えている" width="930" height="608"></a>
+        <figcaption>ターミナルに <code>cd</code> と打ったところで止まっている画面。下はFinderです。灰色の部分は、私のユーザー名を隠しています。画像を押すと、画面の全体を表示します。</figcaption>
+      </figure>
+
+      <h3 class="trap__part">何が起きているか</h3>
+      <p><code>cd</code> は「場所を移動する」命令です。後ろにフォルダの場所(パス)を書きますが、Macのフォルダの場所を文字で打つのは、慣れないと難しいです。私は「cdとフォルダを指定するやり方すらわかっていない」とチャットのClaudeに打ち込んでいました。</p>
+
+      <h3 class="trap__part">こうすれば抜け出せる</h3>
+      <ol class="steps">
+        <li>ターミナルに <code>cd</code> と打ち、スペースを1つ空けます。</li>
+        <li>Finderで作業フォルダを探し、そのフォルダをターミナルの画面にドラッグします。</li>
+        <li>フォルダの場所が自動で入るので、Enterを押します。</li>
+      </ol>
+    </section>
+
+    <section class="trap" aria-labelledby="trap2-title">
+      <p class="trap__num">つまずき2</p>
+      <h2 class="trap__title" id="trap2-title">パスワードを入れたら <code>Sorry, try again.</code> と言われた</h2>
+
+      <h3 class="trap__part">こんな画面が出た</h3>
+      <figure class="figure">
+        <a href="02-sorry-try-again.png"><img src="02-sorry-try-again-crop.png" alt="ターミナルの画面。Password: の次の行に Sorry, try again. と表示され、もう一度 Password: と聞かれている" width="858" height="110" loading="lazy"></a>
+        <figcaption><code>Password:</code> のあとに <code>Sorry, try again.</code> と出て、もう一度聞かれている画面。灰色の部分は、私のユーザー名を隠しています。画像を押すと、画面の全体を表示します。</figcaption>
+      </figure>
+
+      <h3 class="trap__part">何が起きているか</h3>
+      <p>Macのログインパスワードを求められています。打っても画面には●も何も出ないので、打てているのか分かりません。</p>
+      <p>私は1回目、受け付けてもらえず <code>Sorry, try again.</code>(もう一度どうぞ)と出て「え!」となりました。打ち間違えたのか、早く打ちすぎて最初の1文字が入らなかったのか、原因はよく分かりません。落ち着いてもう一度打ったら、通りました。</p>
+
+      <h3 class="trap__part">こうすれば抜け出せる</h3>
+      <ol class="steps">
+        <li>慌てずに、Macにログインするときのパスワードをゆっくり打ってEnterを押します。</li>
+        <li>何も表示されなくても、打てています。</li>
+        <li>3回続けて間違えると終わるので、そのときはコマンドをもう一度実行します。</li>
+      </ol>
+    </section>
+
+    <section class="trap" aria-labelledby="trap3-title">
+      <p class="trap__num">つまずき3</p>
+      <h2 class="trap__title" id="trap3-title">「新しいターミナルを開いて」と言われた。え、なんで?</h2>
+
+      <h3 class="trap__part">こんな画面が出た</h3>
+      <figure class="figure">
+        <a href="03-new-terminal.png"><img src="03-new-terminal.png" alt="Claude Codeの画面。gh がインストールされました、新しいターミナルウィンドウを開けば gh コマンドがそのまま使えます、と表示されている" width="862" height="358" loading="lazy"></a>
+        <figcaption>Claude Codeに「新しいターミナルウィンドウを開けば」と言われた画面。画像を押すと大きく表示します。</figcaption>
+      </figure>
+
+      <h3 class="trap__part">何が起きているか</h3>
+      <p>インストールした直後は、今開いているターミナルが、まだ新しい道具の場所を知りません。開き直すと、新しい設定が読み込まれます。ウインドウが増えても問題ありません。Windowsでも同じことが起きました。</p>
+
+      <h3 class="trap__part">こうすれば抜け出せる</h3>
+      <ol class="steps">
+        <li><code>command</code>+<code>N</code> で新しいターミナルを開きます。</li>
+        <li>新しい方で、もう一度同じコマンドを実行します。</li>
+        <li>古いウインドウは閉じて大丈夫です。</li>
+      </ol>
+    </section>
+
+    <!-- 5. ここまでできたら -->
+    <section class="done" aria-labelledby="done-title">
+      <h2 class="done__title" id="done-title">ここまでできたら</h2>
+      <p>約5分で、MacでもClaude Codeを動かす準備ができました。GitHubへのログインは、Windows編のつまずき3と同じ手順です。</p>
+      <p class="done__next">Windows編はこちら → <a href="/chizu/claude-code-github-saisho-no-5fun/">Claude CodeとGitHub 最初の5分でつまずく3か所(Windows編)</a></p>
+    </section>
+
+    <!-- 6. この話の体験記 / 7. 地図に戻る -->
+    <div class="guide__foot">
+      <p class="guide__diary-label">この話の体験記</p>
+      <p class="guide__diary"><a href="/github-two-pcs/">英語の認証画面におびえながら、GitHubでMac miniとノートPCの2台体制を作った話</a></p>
+      <p class="backlink"><a href="/">地図に戻る</a></p>
+    </div>
+
+  </article>
+
+  <footer class="colophon">
+    <p>文系営業.com</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
